@@ -1,0 +1,10 @@
+.marker {
+  border: none;
+  cursor: pointer;
+  height: 56px;
+  width: 56px;
+  background-image: url(../img/marker.png);
+  background-color: rgba(0, 0, 0, 0);
+  transform: translate(28px, 56px, 0);
+}
+
