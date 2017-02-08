@@ -10,8 +10,13 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
 
     <!-- MAPBOX-gl -->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' /> 
+    <!-- sotred locally -->
+    <!-- <script type="text/javascript" src='/mapbox/js/mapbox-gl.js'></script>
+    <link rel="stylesheet" type="text/css" href='/mapbox/dist/mapbox-gl.css' rel='stylesheet' /> -->
+
+    $(document).ready(mapboxgl);
 
     <!-- STYLES -->
     <link rel="stylesheet" type="text/css" href="/css/map.css">
@@ -62,6 +67,9 @@ var map = new mapboxgl.Map({
   // initial zoom
   zoom: 14
 });
+
+// add zoom options
+map.addControl(new mapboxgl.NavigationControl());
 
 
 d3.json("/data/sweetgreen.geojson", function(facilities)
