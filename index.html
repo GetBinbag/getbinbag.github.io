@@ -92,8 +92,12 @@ d3.json("/data/binbag/output.geojson", function(facilities)
 {
   // shortlist facilities based on location and type of waste allowed
   shortlisted_facilities = facilities.features.filter(function(d){
-    if(d.properties.city == selected_city || d.properties.state == selected_state){
+    if(selected_city === undefined && selected_state === undefined){
       return d;
+    } else {
+      if(d.properties.city == selected_city || d.properties.state == selected_state){
+        return d;
+      }
     }
   });
 
