@@ -1,7 +1,9 @@
 import csv, os
 
 # Read in raw data from csv
-parent_dir = os.path.dirname(os.getcwd())
+current_dir = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.dirname(current_dir)
+
 rawData = csv.reader(open(parent_dir + '/data/binbag/sweetgreen.csv', 'r'), dialect='excel')
 
 # the template. where data from the csv will be formatted to geojson
@@ -22,6 +24,7 @@ template = \
               "phone": "%s",
               "address": "%s",
               "city": "%s",
+              "country": "%s",
               "crossStreet": "%s",
               "postalCode": "%s",
               "state": "%s"
@@ -43,8 +46,8 @@ for row in rawData:
     iter += 1
     if iter >= 2:
         name = row[0]
-        latitude = row[1]
-        longitude = row[2]
+        longitude = row[1]
+        latitude = row[2]
         altitude = row[3]
         geometry = row[4]
         phoneFormatted = row[5]
@@ -52,10 +55,10 @@ for row in rawData:
         address = row[7]
         city = row[8]
         country = row[9]
-        crossStreet = row[9]
-        postalCode = row[10]
-        state = row[1]
-        output += template % (longitude, latitude, name, phoneFormatted, phone, address, city, crossStreet, postalCode, state)
+        crossStreet = row[10]
+        postalCode = row[11]
+        state = row[12]
+        output += template % (latitude, longitude, name, phoneFormatted, phone, address, city, country, crossStreet, postalCode, state)
         # output += template % (latitude, longitude)
 
 # replace the comma after the last '},'

@@ -71,7 +71,9 @@ d3.json("/data/binbag/output.geojson", function(facilities)
 {
   // shortlist facilities based on location and type of waste allowed
   shortlisted_facilities = facilities.features.filter(function(d){
-    return d.properties.city == "Washington DC";
+    if(d.properties.city == "Washington DC" || d.properties.state == "MD"){
+      return d;
+    }
   });
 
   console.log("shortlisted_facilities", shortlisted_facilities);

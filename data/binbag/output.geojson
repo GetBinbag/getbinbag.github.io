@@ -16,9 +16,10 @@
               "phone": "2022347336",
               "address": "1471 P St NW",
               "city": "Washington DC",
-              "crossStreet": "United States",
-              "postalCode": "at 15th St NW",
-              "state": "38.909671288923"
+              "country": "United States",
+              "crossStreet": "at 15th St NW",
+              "postalCode": "20005",
+              "state": "D.C."
             }
           },
          {
@@ -36,9 +37,10 @@
               "phone": "2025078357",
               "address": "2221 I St NW",
               "city": "Washington DC",
-              "crossStreet": "United States",
-              "postalCode": "at 22nd St NW",
-              "state": "38.900772"
+              "country": "United States",
+              "crossStreet": "at 22nd St NW",
+              "postalCode": "20037",
+              "state": "D.C."
             }
           },
          {
@@ -56,9 +58,10 @@
               "phone": "2023879338",
               "address": "1512 Connecticut Ave NW",
               "city": "Washington DC",
-              "crossStreet": "United States",
-              "postalCode": "at Dupont Circle",
-              "state": "38.910525"
+              "country": "United States",
+              "crossStreet": "at Dupont Circle",
+              "postalCode": "20036",
+              "state": "D.C."
             }
           },
          {
@@ -76,9 +79,10 @@
               "phone": "2023379338",
               "address": "3333 M St NW",
               "city": "Washington DC",
-              "crossStreet": "United States",
-              "postalCode": "at 34th St NW",
-              "state": "38.90516896"
+              "country": "United States",
+              "crossStreet": "at 34th St NW",
+              "postalCode": "20007",
+              "state": "D.C."
             }
           },
          {
@@ -96,9 +100,10 @@
               "phone": "2025479338",
               "address": "221 Pennsylvania Ave SE",
               "city": "Washington DC",
-              "crossStreet": "United States",
-              "postalCode": "btwn 2nd & 3rd Sts. SE",
-              "state": "38.887041080933"
+              "country": "United States",
+              "crossStreet": "btwn 2nd & 3rd Sts. SE",
+              "postalCode": "20003",
+              "state": "D.C."
             }
           },
          {
@@ -116,9 +121,10 @@
               "phone": "",
               "address": "8204 Baltimore Ave",
               "city": "College Park",
-              "crossStreet": "United States",
-              "postalCode": "",
-              "state": "38.99225245786"
+              "country": "United States",
+              "crossStreet": "",
+              "postalCode": "20740",
+              "state": "MD"
             }
           },
          {
@@ -136,9 +142,10 @@
               "phone": "3016547336",
               "address": "4831 Bethesda Ave",
               "city": "Bethesda",
-              "crossStreet": "United States",
-              "postalCode": "",
-              "state": "38.980979"
+              "country": "United States",
+              "crossStreet": "",
+              "postalCode": "20814",
+              "state": "MD"
             }
           },
          {
@@ -156,9 +163,10 @@
               "phone": "5712030082",
               "address": "11935 Democracy Dr",
               "city": "Reston",
-              "crossStreet": "United States",
-              "postalCode": "btw Explorer & Library",
-              "state": "38.958058116661"
+              "country": "United States",
+              "crossStreet": "btw Explorer & Library",
+              "postalCode": "20190",
+              "state": "VA"
             }
           },
          {
@@ -176,9 +184,10 @@
               "phone": "7035222016",
               "address": "4075 Wilson Blvd",
               "city": "Arlington",
-              "crossStreet": "United States",
-              "postalCode": "at N Randolph St.",
-              "state": "38.880100922392"
+              "country": "United States",
+              "crossStreet": "at N Randolph St.",
+              "postalCode": "22203",
+              "state": "VA"
             }
           },
          {
@@ -196,9 +205,10 @@
               "phone": "6106429400",
               "address": "68 Coulter Ave",
               "city": "Ardmore",
-              "crossStreet": "United States",
-              "postalCode": "",
-              "state": "40.008008"
+              "country": "United States",
+              "crossStreet": "",
+              "postalCode": "19003",
+              "state": "PA"
             }
           },
          {
@@ -216,9 +226,10 @@
               "phone": "2153861365",
               "address": "3925 Walnut St",
               "city": "Philadelphia",
-              "crossStreet": "United States",
-              "postalCode": "",
-              "state": "39.954030175164"
+              "country": "United States",
+              "crossStreet": "",
+              "postalCode": "19104",
+              "state": "PA"
             }
           },
          {
@@ -236,9 +247,10 @@
               "phone": "2023313355",
               "address": "1901 L St. NW",
               "city": "Washington DC",
-              "crossStreet": "United States",
-              "postalCode": "at 19th St",
-              "state": "38.903883387232"
+              "country": "United States",
+              "crossStreet": "at 19th St",
+              "postalCode": "20036",
+              "state": "D.C."
             }
           } ]
 }
