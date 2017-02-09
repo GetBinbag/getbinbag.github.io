@@ -69,8 +69,13 @@ map.addControl(new mapboxgl.NavigationControl());
 
 d3.json("/data/binbag/output.geojson", function(facilities)
 {
+  // shortlist facilities based on location and type of waste allowed
+  shortlisted_facilities = facilities.features.filter(function(d){
+    return d.properties.city == "Washington DC";
+  });
 
-  console.log(facilities);
+  console.log("shortlisted_facilities", shortlisted_facilities);
+
   map.on('load', function(e) {
   // Add the data to your map as a layer
   map.addSource('places', {
@@ -78,9 +83,7 @@ d3.json("/data/binbag/output.geojson", function(facilities)
     data: facilities
   });
 
-  console.log(facilities);
-
-  facilities.features.forEach(function(marker) {
+  shortlisted_facilities.forEach(function(marker) {
     // Create a div element for the marker
     var el = document.createElement('div');
     // Add a class called 'marker' to each div
