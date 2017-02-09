@@ -48,6 +48,27 @@ if (!('remove' in Element.prototype)) {
   };
 }
 
+// get parameters from URL
+var selected_city = getUrlParameter("city")
+var selected_state = getUrlParameter("state");
+
+// log dir name for clarity in the javascript console
+console.log("city received from url", getUrlParameter("city"));
+console.log("state received from url", getUrlParameter("state"));
+
+function getUrlParameter(sParam) {
+  var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+    sURLVariables = sPageURL.split('&'), sParameterName, i;
+
+  for (i = 0; i < sURLVariables.length; i++) {  
+    sParameterName = sURLVariables[i].split('=');
+
+      if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
 
 // initialize the map
 mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0YW1ib2xpZXZhIiwiYSI6ImNpeXZudHB3czAwMjcyd21zcHFidjZ2eWUifQ.fMIEvI7LPrICPLuf8RJ4xA';
@@ -71,7 +92,7 @@ d3.json("/data/binbag/output.geojson", function(facilities)
 {
   // shortlist facilities based on location and type of waste allowed
   shortlisted_facilities = facilities.features.filter(function(d){
-    if(d.properties.city == "Washington DC" || d.properties.state == "MD"){
+    if(d.properties.city == selected_city || d.properties.state == selected_state){
       return d;
     }
   });
