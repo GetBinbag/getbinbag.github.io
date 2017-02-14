@@ -145,7 +145,7 @@ d3.json("/data/binbag/output.geojson", function(facilities)
 
   });
 
-  buildLocationList(facilities);
+  buildLocationList(shortlisted_facilities);
 
   });
 
@@ -154,8 +154,8 @@ d3.json("/data/binbag/output.geojson", function(facilities)
 // function to iterate over all locations
 function buildLocationList(data) {
   // Iterate through the list of stores
-  for (i = 0; i < data.features.length; i++) {
-    var currentFeature = data.features[i];
+  for (i = 0; i < data.length; i++) {
+    var currentFeature = data[i];
     // Shorten data.feature.properties to just `prop` so we're not
     // writing this long form over and over again.
     var prop = currentFeature.properties;
@@ -186,7 +186,8 @@ function buildLocationList(data) {
     link.addEventListener('click', function(e) {
       console.log(e);
       // Update the currentFeature to the store associated with the clicked link
-      var clickedListing = data.features[this.dataPosition];
+      var clickedListing = data[this.dataPosition];
+      console.log('clickedListing', clickedListing);
       // 1. Fly to the point associated with the clicked link
       flyToFacility(clickedListing);
       // 2. Close all other popups and display popup for clicked store
@@ -205,7 +206,7 @@ function buildLocationList(data) {
 
 // fly map to location
 function flyToFacility(currentFeature) {
-  coordinates = [currentFeature.latitude, currentFeature.longitude];
+  coordinates = currentFeature.geometry.coordinates;
   map.flyTo({
     center: coordinates,
     zoom: 15
