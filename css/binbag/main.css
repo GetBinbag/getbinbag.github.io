@@ -1,0 +1,59 @@
+.page-content {
+	background-image: url("../../img/binbag/India.png");
+}
+
+/* Forms the almost transparent grey rectangle around the buttons */
+.hero-search-fields {
+	background-color: rgba(0,0,0,.1);
+	padding: 25px;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	padding-bottom: 100px;
+}
+
+.hero {
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	color: #fff;
+	padding-top: 125px;
+	padding-bottom: 225px;
+}
+
+.input-wrapper {
+	float: left;
+	border-collapse: separate;
+	display: table;
+}
+
+.input-wrapper  *{
+
+    display: inline-block;
+    padding-left: 0px;
+}
+
+.form-control {
+	/*width: 50%;*/
+	font-size: 24px;
+	line-height: 1.8;
+	height: 70px;
+}
+
+input {
+	-webkit-appearance: textfield;
+	background-color: white;
+	user-select: text;
+	cursor: auto;
+	border-width: 1px;
+	border-style: ridge;
+	border-color: initial;
+	border-image: initial;
+    border-radius: 5px;
+}
+
+.input-group {
+	white-space: nowrap;
+	color: #fff;
+	background-color: #00853e;
+	border-color: #00853e;
+}
