@@ -38,7 +38,7 @@
 </div>
 
 
-<div id='map' class='map pad2'>Map</div>
+<div id='map' class='map pad2'></div>
 
 
 <script>
@@ -130,7 +130,7 @@ d3.json("/data/binbag/output.geojson", function(facilities)
 
   var vertical_tolerance = (north - south) /4;
   var horizontal_tolerance = (east - west) / 4;
-  
+
   // 2. bound the map
   // IMPORTANT: the bouding box is identified by two locations:
   // a. sw, South-West one
