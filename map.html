@@ -127,6 +127,9 @@ d3.json("/data/binbag/output.geojson", function(facilities)
       east = lat;
     }
   }
+
+  var vertical_tolerance = (north - south) /4;
+  var horizontal_tolerance = (east - west) / 4;
   
   // 2. bound the map
   // IMPORTANT: the bouding box is identified by two locations:
@@ -134,11 +137,11 @@ d3.json("/data/binbag/output.geojson", function(facilities)
   // b. ne, the North-East one
   map.fitBounds([
     [
-        south - 1,
-        west - 1
+        south - vertical_tolerance,
+        west - horizontal_tolerance
     ], [
-        north + 1,
-        east + 1
+        north + vertical_tolerance,
+        east + horizontal_tolerance
     ]]);
 
   map.on('load', function(e) {
