@@ -13,6 +13,10 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' /> 
 
+    <!-- LEAFLET -->
+    <!-- <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script> -->
+
     <!-- STYLES -->
     <link rel="stylesheet" type="text/css" href="/css/binbag/map.css">
     <link rel="stylesheet" type="text/css" href="/css/binbag/popup.css">
@@ -79,7 +83,7 @@ var map = new mapboxgl.Map({
   // style URL
   style: 'mapbox://styles/mapbox/light-v9',
   // initial position in [long, lat] format
-  center: [-77.034084, 38.909671],
+  // center: [-77.034084, 38.909671],
   // initial zoom
   zoom: 14
 });
@@ -90,6 +94,7 @@ map.addControl(new mapboxgl.NavigationControl());
 
 d3.json("/data/binbag/output.geojson", function(facilities)
 {
+
   // shortlist facilities based on location and type of waste allowed
   shortlisted_facilities = facilities.features.filter(function(d){
     if(selected_city === undefined && selected_state === undefined){
@@ -102,6 +107,41 @@ d3.json("/data/binbag/output.geojson", function(facilities)
   });
 
   console.log("shortlisted_facilities", shortlisted_facilities);
+
+  // center the map around the coordinates present
+  // 1. find the min and max values of lat and lng
+  var south = Infinity, north = -Infinity; //longitude
+  var east = -Infinity, west = Infinity; // latitude
+  for (i = 0; i < shortlisted_facilities.length; i++){
+    d = shortlisted_facilities[i];
+    var lng = d.geometry.coordinates[0];
+    var lat = d.geometry.coordinates[1];
+    if(lng < south){
+      south = lng;
+    }
+    if(lng > north){
+      north = lng;
+    }
+    if(lat < west){
+      west = lat;
+    }
+    if(lat > east){
+      east = lat;
+    }
+  }
+  console.log(south - 1, west, north + 1, east);
+  // 2. bound the map
+  // IMPORTANT: the bouding box is identified by two locations:
+  // a. sw, South-West one
+  // b. ne, the North-East one
+  map.fitBounds([
+    [
+        south - 2,
+        west - 2
+    ], [
+        north + 2,
+        east + 2
+    ]]);
 
   map.on('load', function(e) {
   // Add the data to your map as a layer
@@ -120,7 +160,6 @@ d3.json("/data/binbag/output.geojson", function(facilities)
     el.style.left = '-28px';
     el.style.top = '-46px';
     // Create the custom markers, set their position, and add to map
-    coordinates = [marker.latitude, marker.longitude];
     new mapboxgl.Marker(el)
       .setLngLat(marker.geometry.coordinates)
       .addTo(map);
