@@ -106,8 +106,6 @@ d3.json("/data/binbag/output.geojson", function(facilities)
     }
   });
 
-  console.log("shortlisted_facilities", shortlisted_facilities);
-
   // center the map around the coordinates present
   // 1. find the min and max values of lat and lng
   var south = Infinity, north = -Infinity; //longitude
@@ -129,18 +127,18 @@ d3.json("/data/binbag/output.geojson", function(facilities)
       east = lat;
     }
   }
-  console.log(south - 1, west, north + 1, east);
+  
   // 2. bound the map
   // IMPORTANT: the bouding box is identified by two locations:
   // a. sw, South-West one
   // b. ne, the North-East one
   map.fitBounds([
     [
-        south - 2,
-        west - 2
+        south - 1,
+        west - 1
     ], [
-        north + 2,
-        east + 2
+        north + 1,
+        east + 1
     ]]);
 
   map.on('load', function(e) {
@@ -211,7 +209,7 @@ function buildLocationList(data) {
     link.href = '#';
     link.className = 'title';
     link.dataPosition = i;
-    link.innerHTML = prop.address;
+    link.innerHTML = prop.company;
 
     // Create a new div with the class 'details' for each store
     // and fill it with the city and phone number
@@ -248,20 +246,50 @@ function flyToFacility(currentFeature) {
   coordinates = currentFeature.geometry.coordinates;
   map.flyTo({
     center: coordinates,
-    zoom: 15
+    zoom: 14
   });
 }
 
 //  build a pop=up
 function createPopUp(currentFeature) {
+  d = currentFeature.properties;
+  console.log(currentFeature);
   var popUps = document.getElementsByClassName('mapboxgl-popup');
   // Check if there is already a popup on the map and if so, remove it
   if (popUps[0]) popUps[0].remove();
 
+  // build address
+  address = "";
+  if (d.plot != ""){
+    address += d.plot;
+    address += ", ";
+  }
+  if (d.stage != ""){
+    address += d.stage;
+    address += ", ";
+  }
+  if (d.industrial != ""){
+    address += d.industrial;
+    address += ", ";
+  }
+  if (d.locality != ""){
+    address += d.locality;
+    address += ", ";
+  }
+  if (d.city != ""){
+    address += d.city;
+    address += ", ";
+  }
+  if (d.state != ""){
+    address += d.state;
+    address += ", ";
+  }
+  if (d.country != "") address += d.country;
+
   var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>Sweetgreen</h3>' +
-      '<h4>' + currentFeature.properties.address + '</h4>')
+    .setHTML('<h3>' + d.company + '</h3>' +
+      '<h4>' + address + '</h4>')
     .addTo(map);
 }
 
