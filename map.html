@@ -53,7 +53,8 @@ if (!('remove' in Element.prototype)) {
 }
 
 // get parameters from URL
-var selected_city = getUrlParameter("city")
+var selected_type = getUrlParameter("type");
+var selected_city = getUrlParameter("city");
 var selected_state = getUrlParameter("state");
 
 // log dir name for clarity in the javascript console
@@ -94,18 +95,22 @@ map.addControl(new mapboxgl.NavigationControl());
 
 d3.json("/data/binbag/output.geojson", function(facilities)
 {
-
+  console.log(facilities);
+  console.log(selected_type === "", selected_city === "", selected_state === "");
   // shortlist facilities based on location and type of waste allowed
   shortlisted_facilities = facilities.features.filter(function(d){
-    if(selected_city === undefined && selected_state === undefined){
+    if(selected_type === "" && selected_city === "" && selected_state === ""){
+      console.log('d', d);
       return d;
     } else {
-      if(d.properties.city == selected_city || d.properties.state == selected_state){
+      if(d.properties.city == selected_city || d.properties.state == selected_state
+        || d.properties.type == selected_type){
         return d;
       }
     }
   });
 
+  console.log('shortlisted_facilities', shortlisted_facilities);
   // center the map around the coordinates present
   // 1. find the min and max values of lat and lng
   var south = Infinity, north = -Infinity; //longitude
