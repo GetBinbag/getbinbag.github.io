@@ -56,9 +56,6 @@ if (!('remove' in Element.prototype)) {
 var selected_type = getUrlParameter("type");
 var selected_city = getUrlParameter("city");
 
-// log dir name for clarity in the javascript console
-console.log("city received from url", getUrlParameter("city"));
-
 function getUrlParameter(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
     sURLVariables = sPageURL.split('&'), sParameterName, i;
@@ -109,8 +106,6 @@ d3.json("/data/binbag/output.geojson", function(facilities)
       return d;
     });
   }
-
-  console.log('shortlisted_facilities', shortlisted_facilities);
   
   // center the map around the coordinates present
   // 1. find the min and max values of lat and lng
@@ -162,7 +157,12 @@ d3.json("/data/binbag/output.geojson", function(facilities)
     // Create a div element for the marker
     var el = document.createElement('div');
     // Add a class called 'marker' to each div
-    el.className = 'marker';
+    if(marker.properties.type == "lead"){
+      el.className = 'marker lead';  
+    } else {
+      el.className = 'marker battery';
+    }
+    
     // By default the image for your custom marker will be anchored
     // by its top left corner. Adjust the position accordingly
     el.style.left = '-28px';
@@ -175,7 +175,6 @@ d3.json("/data/binbag/output.geojson", function(facilities)
     // add a listener
     el.addEventListener('click', function(e) {
       var activeItem = document.getElementsByClassName('active');
-      console.log(activeItem)
       // 1. Fly to the point
       flyToFacility(marker);
       // 2. Close all other popups and display popup for clicked store
@@ -186,7 +185,6 @@ d3.json("/data/binbag/output.geojson", function(facilities)
         activeItem[0].classList.remove('active');
       }
       var listing = document.getElementById('listing-' + i);
-      console.log(listing);
       listing.classList.add('active');
     });
 
@@ -234,7 +232,6 @@ function buildLocationList(data) {
       console.log(e);
       // Update the currentFeature to the store associated with the clicked link
       var clickedListing = data[this.dataPosition];
-      console.log('clickedListing', clickedListing);
       // 1. Fly to the point associated with the clicked link
       flyToFacility(clickedListing);
       // 2. Close all other popups and display popup for clicked store
@@ -263,7 +260,6 @@ function flyToFacility(currentFeature) {
 //  build a pop=up
 function createPopUp(currentFeature) {
   d = currentFeature.properties;
-  console.log(currentFeature);
   var popUps = document.getElementsByClassName('mapboxgl-popup');
   // Check if there is already a popup on the map and if so, remove it
   if (popUps[0]) popUps[0].remove();
