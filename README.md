@@ -120,6 +120,21 @@ Python is a programming language and we will use it in order to get coordinates 
 ### Getting the coordinates for each facility  
   
 2. Run the small Python script, which automatically extracts coordinates from addresses. It creates the *output.geojson* file, under data/binbag/, which is loaded during visualization  
+ - preparatory step: make sure you have the right directory structure  
+   * have a folder in *Documents*, example title *waste_circle*, and create to subfolders in it
+     - data  
+     - helper  
+   * go to *data* and create another subfolder called *binbag*  
+   * put the csv file, *recyclers.csv*, in this binbag folder  
+   * download the [csv_to_geojson.py](https://raw.githubusercontent.com/GetBinbag/getbinbag.github.io/master/helper/csv_to_geojson.py). Click on the link, right click on the page and click 'Save as'. Save it with the same name in the directory *helper*.  
+ - in Terminal, navigate to the helper folder, typing this command in followed by 'Enter':    
+ ```bash
+ cd Documents/waste_circle/helper
+ ```   
+ - after that, eecute this one:  
+ ```bash
+ python csv_to_geojson.py
+ ```  
   
   [![Python script output](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_conversion.png)](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_conversion.png)  
  <p align='center'> Python script: running and output, which tells which facilities, on line number X, in the csv did not have their cooridinates found. Read the N.B. below.</p>   
