@@ -111,13 +111,26 @@ Python is a programming language and we will use it in order to get coordinates 
    - for each cell of the csv file, have:  
      * no trailing commas and spaces  
      * remove unnecessary abreviations from addresses such as 'Flat No.', 'Shed' and 'Survey No.'   
+     * the type of waste is given with small letters and only the identifying word. For exxample, type in *lead* instead of *Lead waste*  
+
  [![CSV format](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_format.png)](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_format.png)  
  <p align='center'> CSV format. The correct file format is shown above the black line, the original - below.</p>   
+
 
 ### Getting the coordinates for each facility  
   
 2. Run the small Python script, which automatically extracts coordinates from addresses. It creates the *output.geojson* file, under data/binbag/, which is loaded during visualization  
   
+  [![Python script output](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_conversion.png)](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_conversion.png)  
+ <p align='center'> Python script: running and output, which tells which facilities, on line number X, in the csv did not have their cooridinates found. Read the N.B. below.</p>   
+    
+**N.B:** The way the coordinates are extracted is the following:  
+- we construct an address with the values of fields *industrial*, *locality*, *city* and *country*  
+- if no coordinates are found with this address, we make it broader by using only *locality*, *city* and *country*  
+- if again no address is found, we fall back just to *city* and *country*  
+  * every time this happens, the Python program will print a message in the terminal telling you which lines of the csv file have coordinates pointing only to the city + country. We will try to work this out and make the full address be recognized for the sake of accuracy.  
+
+
 3. Update both the ** and *output.geojson* files in Github. See [Pushing New Files to Github](#push) for detailed how-to.    
   
 <a name="push"></a> 
@@ -139,6 +152,14 @@ N.B: The web site will not work if the database is not in a file titled **recycl
 <a name="important"></a> 
 ## IMPORTANT:  
   
-1. We use a map from Mapbox, which has **50,000 free hits** per year and then becomes paid.    
-  - ping me when you notice something strange, maybe you have reached the 50,000 hits    
+1. We use a map from Mapbox, which has **50,000 free hits** per year and then becomes paid.  
+ - when you notice something strange:
+   * check if you have reached the limit - link is given above when we speak about Mapbox  
+   * else: ping me  
+
+2. The way the coordinates are extracted is the following:  
+- we construct an address with the values of fields *industrial*, *locality*, *city* and *country*  
+- if no coordinates are found with this address, we make it broader by using only *locality*, *city* and *country*  
+- if again no address is found, we fall back just to *city* and *country*  
+  * every time this happens, the Python program will print a message in the terminal telling you which lines of the csv file have coordinates pointing only to the city + country. We will try to work this out and make the full address be recognized for the sake of accuracy.    
   
