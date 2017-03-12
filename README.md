@@ -5,7 +5,7 @@ Code written to support Binbag, the waste management facility aggregator of Indi
   
 **ToC:**  
   
-1. Structure  
+1. [Structure](#structure)  
  - browsing  
 2. [Requirements](#requirements) 
  - installation  
@@ -18,6 +18,27 @@ Code written to support Binbag, the waste management facility aggregator of Indi
 
 --- 
   
+<a name="structure"></a>
+## Structure  
+  
+The website has two pages:  
+  
+1. The main page  
+ - the main page contains a brief of the project along with contact details and search form  
+ - the search form has two fields  
+  * city  
+  * type  
+ - if any of these fields is complete, the map returns results given the specific filtering criteria  
+ - if both these fields are left empty, the map shows all waste facilities, which are currently in the database  
+
+2. The map page  
+ - it shows a list of name + city for all waste facilities  
+ - it shows each waste facility as a pin on the map  
+ - both the names in the list to the left, and the pin on the map to the right are clickable  
+  * when clicked, they send the viewer to the pin on this particuclar waste facility and show a bubble with its full address  
+  
+---  
+
 <a name="requirements"></a>
 ## Requirements  
 
@@ -72,16 +93,19 @@ Python is a programming language and we will use it in order to get coordinates 
   - can be obtained by registering on Mapbox's web page (you have already been registered - same as GitHub registration)    
   - is located here: [https://www.mapbox.com/studio/account/tokens/](https://www.mapbox.com/studio/account/tokens/)  
   - to know how many hits your maps have, go to [https://www.mapbox.com/studio/account/billing/](https://www.mapbox.com/studio/account/billing/)  
- 
+  
+---  
+
 <a name="database"></a> 
 ## Updating the database   
   
 ## Pushing New Files to Github  
   
+--- 
 
 <a name="important"></a> 
 ## IMPORTANT:  
   
-1. We use a map from Mapbox, which has 50,000 free hits per year and then becomes paid.    
+1. We use a map from Mapbox, which has **50,000 free hits** per year and then becomes paid.    
   - ping me when you notice something strange, maybe you have reached the 50,000 hits    
   
