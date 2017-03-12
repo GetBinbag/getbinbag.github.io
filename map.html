@@ -105,14 +105,18 @@ d3.json("/data/binbag/output.geojson", function(facilities)
   // if there is nothing shortlisted, just show all entries
   // TODO: some message to the user
   if(shortlisted_facilities.length == 0){
-    shortlisted_facilities = facilities;
+    shortlisted_facilities = facilities.features.filter(function(d){
+      return d;
+    });
   }
 
   console.log('shortlisted_facilities', shortlisted_facilities);
+  
   // center the map around the coordinates present
   // 1. find the min and max values of lat and lng
   var south = Infinity, north = -Infinity; //longitude
   var east = -Infinity, west = Infinity; // latitude
+
   for (i = 0; i < shortlisted_facilities.length; i++){
     d = shortlisted_facilities[i];
     var lng = d.geometry.coordinates[0];

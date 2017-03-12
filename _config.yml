@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Waste Facilities in India
-email: hello@wastecircle.com
+email: getbinbag@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   India is drowning in waste. This is why we make it easy for you and your organization to collect and recycle. Search by type and location.
 baseurl: "" # the subpath of your site, e.g. /blog

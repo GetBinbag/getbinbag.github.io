@@ -210,6 +210,342 @@
               "state": "Karnataka",
               "country": "India"
             }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                78.1037343889763,
+                17.2757009
+              ]
+            },
+            "properties": {
+              "company": "Anantha Lead (Aishwarya Metal Refineries)",
+              "type": "lead",
+              "plot": "148-150",
+              "stage": "",
+              "industrial": "IDA-Medchal",
+              "locality": "",
+              "city": "Rangareddy",
+              "state": "Andhra Pradesh",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                79.4077202420422,
+                17.08381015
+              ]
+            },
+            "properties": {
+              "company": "NILE Ltd",
+              "type": "lead",
+              "plot": "",
+              "stage": "",
+              "industrial": "Panthangi Village",
+              "locality": "Choutuppal Mandal",
+              "city": "Nalgonda",
+              "state": "Andra Pradesh",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                70.7860061733424,
+                22.3409469
+              ]
+            },
+            "properties": {
+              "company": "S. K. Metal Industries",
+              "type": "lead",
+              "plot": "1",
+              "stage": "",
+              "industrial": "",
+              "locality": "Veraval",
+              "city": "Rajkot",
+              "state": "Gujarat",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                77.0175194,
+                28.9880852
+              ]
+            },
+            "properties": {
+              "company": "Om Enterprises",
+              "type": "lead",
+              "plot": "B-9",
+              "stage": "3rd Stage",
+              "industrial": "Prem Colony",
+              "locality": "Kundli",
+              "city": "Sonepat",
+              "state": "Haryana",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                77.5273253,
+                13.0329419
+              ]
+            },
+            "properties": {
+              "company": "Ananda Metal Corporation",
+              "type": "lead",
+              "plot": "C-81",
+              "stage": "",
+              "industrial": "Peenya Industrial Estate",
+              "locality": "Peenya",
+              "city": "Bangalore",
+              "state": "Karnataka",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                74.8430082,
+                12.8698101
+              ]
+            },
+            "properties": {
+              "company": "Eswari Metal Industries",
+              "type": "lead",
+              "plot": "Flat No. 101",
+              "stage": "",
+              "industrial": "Bikampadi Industrial Area",
+              "locality": "Bikampadi",
+              "city": "Mangalore",
+              "state": "Karnataka",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                77.5136538783895,
+                13.0314616
+              ]
+            },
+            "properties": {
+              "company": "Hemalata Metal Mart",
+              "type": "lead",
+              "plot": "65-B",
+              "stage": "",
+              "industrial": "Penya Industrial Estate",
+              "locality": "Peenya 3rd Stage",
+              "city": "Bangalore",
+              "state": "Karnataka",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                77.7115376,
+                12.3331314
+              ]
+            },
+            "properties": {
+              "company": "Sri Saraswati Metal Industries",
+              "type": "lead",
+              "plot": "B-40",
+              "stage": "",
+              "industrial": "Veerasandra, Industrial Estate",
+              "locality": "Anekal",
+              "city": "Bangalore",
+              "state": "karnataka",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                75.8841154,
+                22.717543
+              ]
+            },
+            "properties": {
+              "company": "Ganpati Metals",
+              "type": "lead",
+              "plot": "Survey No. 308",
+              "stage": "",
+              "industrial": "Gram Manglia",
+              "locality": "A.B. Road",
+              "city": "Indore",
+              "state": "Madhya Pradesh",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                75.8682103,
+                22.7203851
+              ]
+            },
+            "properties": {
+              "company": "M.S. Metals",
+              "type": "lead",
+              "plot": "300",
+              "stage": "",
+              "industrial": "Sector-F, Industrial Estate",
+              "locality": "Sanwar Road",
+              "city": "Indore",
+              "state": "Madhya Pradesh",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                75.8682103,
+                22.7203851
+              ]
+            },
+            "properties": {
+              "company": "Manoj Industries",
+              "type": "lead",
+              "plot": "15-16 D",
+              "stage": "",
+              "industrial": "Sector-C, Industrial Estate",
+              "locality": "Sanwar Road",
+              "city": "Indore",
+              "state": "Madhya Pradesh",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                81.3732849,
+                21.2120677
+              ]
+            },
+            "properties": {
+              "company": "Power Pack Industries",
+              "type": "lead",
+              "plot": "32/D",
+              "stage": "",
+              "industrial": "Light Industrial Area",
+              "locality": "",
+              "city": "Bhilai",
+              "state": "Madhya Pradesh",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                72.9701779,
+                19.1943294
+              ]
+            },
+            "properties": {
+              "company": "Hans Enterprises",
+              "type": "lead",
+              "plot": "1",
+              "stage": "Meera",
+              "industrial": "Golani Complex, Opp Syndicate Bank,Vasai",
+              "locality": " Off Vasai Vajreshwari Road, Waliv, ",
+              "city": "Thane",
+              "state": "Maharashtra",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                72.9789787,
+                19.2130352
+              ]
+            },
+            "properties": {
+              "company": "Indian Lead Limited",
+              "type": "lead",
+              "plot": "L.B.S. Marg",
+              "stage": "",
+              "industrial": "",
+              "locality": " Majiwada",
+              "city": "Thane",
+              "state": "Maharashtra",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                73.8543185,
+                18.5203062
+              ]
+            },
+            "properties": {
+              "company": "Maharashtra Lead Pvt. Ltd.Dist. Pune, Maharashtra.",
+              "type": "lead",
+              "plot": "517/518",
+              "stage": "",
+              "industrial": "Aalandi Markal Road",
+              "locality": "Village Solu, Taluka Khed",
+              "city": "Pune",
+              "state": "Maharashtra",
+              "country": "India"
+            }
+          },
+         {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                72.8308337,
+                18.9321862
+              ]
+            },
+            "properties": {
+              "company": "N. V. Metals & Alloys",
+              "type": "lead",
+              "plot": "270/72",
+              "stage": "",
+              "industrial": "Annapurna Niwas",
+              "locality": "Jagannath Shankar Seth Road",
+              "city": "Mumbai",
+              "state": "Maharashtra",
+              "country": "India"
+            }
           } ]
 }
     
