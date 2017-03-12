@@ -86,12 +86,6 @@ Python is a programming language and we will use it in order to get coordinates 
   pip install csv
   pip install geopy
   ```  
-  
-3. Install git - this is the program, which allows for database updates (in our current scenario)  
- - download from [here](https://git-scm.com/download/mac)  
- -  follow the installation instructions  
- [![Git on Mac](https://git-scm.com/book/en/v2/images/git-osx-installer.png)](https://git-scm.com/book/en/v2/images/git-osx-installer.png)  
- - that should be it  
 
 ### Other  
   
@@ -106,12 +100,30 @@ Python is a programming language and we will use it in order to get coordinates 
 ## Updating the database   
   
 ### Structuring the csv file  
+  
+*THIS IS VERY IMPORTANT. IF THESE STEPS ARE NOT FOLLOWED, THE FILTERING AND VISUALIZATION WILL NOT WORK*  
+
+1. Keep the original data in a csv file with this specific format:  
+   - for each update of the csv file, have:  
+     * the exact same column names, all lowercased  
+     * no empty rows and columns - check the screenshot with before and after csv look    
+
+   - for each cell of the csv file, have:  
+     * no trailing commas and spaces  
+     * remove unnecessary abreviations from addresses such as 'Flat No.', 'Shed' and 'Survey No.'   
+ [![CSV format](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_format.png)](https://github.com/GetBinbag/getbinbag.github.io/blob/master/img/readme/csv_format.png)  
+ <p align='center'> CSV format. The correct file format is shown above the black line, the original - below.</p>   
 
 ### Getting the coordinates for each facility  
-
+  
+2. Run the small Python script, which automatically extracts coordinates from addresses. It creates the *output.geojson* file, under data/binbag/, which is loaded during visualization  
+  
+3. Update both the ** and *output.geojson* files in Github. See [Pushing New Files to Github](#push) for detailed how-to.    
+  
+<a name="push"></a> 
 ### Pushing New Files to Github  
 
-*THE FOLLOWING INSTRUCTIONS ARE RAN EVERY TIME A DATABSE UPDATE IS NEEDED:*  
+*FOLLOW THESE INSTRUCTIONS EVERY TIME A DATABSE UPDATE IS NEEDED:*  
   * go to and login to Github at [https://github.com/GetBinbag/getbinbag.github.io](https://github.com/GetBinbag/getbinbag.github.io)  
   * click the *Upload Files* button  
   * select the file, which IS named *recyclers.csv*  
