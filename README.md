@@ -12,7 +12,7 @@ Code written to support Binbag, the waste management facility aggregator of Indi
  - other  
 3. [Updating the database](#database)  
  - structuring the csv file  
- - getting the locations of each facility  
+ - getting the coordinates of each facility  
  - pushing new files to Github  
 5. [IMPORTANT](#important)  
 
@@ -62,7 +62,7 @@ Python is a programming language and we will use it in order to get coordinates 
   
 2. install pip, requests, csv, os and geopy  
  - install pip  
-  - use *easy_install* for the installation. Type in these command in terminal, line by line by pressing *Enter* after each line, while waiting for each of them to finish before you proceed. You will know when the command has finished when you are back to line of the Terminal screen that looks like that:  
+   * use *easy_install* for the installation. Type in these command in terminal, line by line by pressing *Enter* after each line, while waiting for each of them to finish before you proceed. You will know when the command has finished when you are back to line of the Terminal screen that looks like that:  
   ```bash
   your-user-name: $ 
   ```  
@@ -86,6 +86,12 @@ Python is a programming language and we will use it in order to get coordinates 
   pip install csv
   pip install geopy
   ```  
+  
+3. Install git - this is the program, which allows for database updates (in our current scenario)  
+ - download from [here](https://git-scm.com/download/mac)  
+ -  follow the installation instructions  
+ [![Git on Mac](https://git-scm.com/book/en/v2/images/git-osx-installer.png)](https://git-scm.com/book/en/v2/images/git-osx-installer.png)  
+ - that should be it  
 
 ### Other  
   
@@ -99,8 +105,23 @@ Python is a programming language and we will use it in order to get coordinates 
 <a name="database"></a> 
 ## Updating the database   
   
-## Pushing New Files to Github  
+### Structuring the csv file  
+
+### Getting the coordinates for each facility  
+
+### Pushing New Files to Github  
+
+*THE FOLLOWING INSTRUCTIONS ARE RAN EVERY TIME A DATABSE UPDATE IS NEEDED:*  
+  * go to and login to Github at [https://github.com/GetBinbag/getbinbag.github.io](https://github.com/GetBinbag/getbinbag.github.io)  
+  * click the *Upload Files* button  
+  * select the file, which IS named *recyclers.csv*  
+  * write a small comment in the text field under **Commit changes**, which hint is *Add files via upload*.
+    - an example of the comment is "Added waste facilities for lead".
+  * click the green button **Commit changes**  
+  * this is it :)  
   
+N.B: The web site will not work if the database is not in a file titled **recyclers.csv**.  
+
 --- 
 
 <a name="important"></a> 
