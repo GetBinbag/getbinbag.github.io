@@ -55,11 +55,9 @@ if (!('remove' in Element.prototype)) {
 // get parameters from URL
 var selected_type = getUrlParameter("type");
 var selected_city = getUrlParameter("city");
-var selected_state = getUrlParameter("state");
 
 // log dir name for clarity in the javascript console
 console.log("city received from url", getUrlParameter("city"));
-console.log("state received from url", getUrlParameter("state"));
 
 function getUrlParameter(sParam) {
   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -95,20 +93,20 @@ map.addControl(new mapboxgl.NavigationControl());
 
 d3.json("/data/binbag/output.geojson", function(facilities)
 {
-  console.log(facilities);
-  console.log(selected_type === "", selected_city === "", selected_state === "");
   // shortlist facilities based on location and type of waste allowed
   shortlisted_facilities = facilities.features.filter(function(d){
-    if(selected_type === "" && selected_city === "" && selected_state === ""){
-      console.log('d', d);
+    if(d.properties.city == selected_city || d.properties.type == selected_type){
       return d;
-    } else {
-      if(d.properties.city == selected_city || d.properties.state == selected_state
-        || d.properties.type == selected_type){
-        return d;
-      }
+    } else if (d.properties.city === "" && selected_city === ""){
+      return d;
     }
   });
+
+  // if there is nothing shortlisted, just show all entries
+  // TODO: some message to the user
+  if(shortlisted_facilities.length == 0){
+    shortlisted_facilities = facilities;
+  }
 
   console.log('shortlisted_facilities', shortlisted_facilities);
   // center the map around the coordinates present
