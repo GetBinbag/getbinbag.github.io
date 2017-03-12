@@ -25,12 +25,23 @@ Code written to support Binbag, the waste management facility aggregator of Indi
   
 Before you start, install these *python libraries* on your computer (one time installation):  
 Python is a programming language and we will use it in order to get coordinates for each facility.
-
-1. pip, requests, csv, os and geopy  
+  
+1. Make sure Python 3.* is installed:  
  - open terminal. It is located in folder *Applications/Utilities*. Click on the *Terminal* application.  
  [![Terminal on Mac](http://blog.teamtreehouse.com/wp-content/uploads/2012/09/Screen-Shot-2012-09-25-at-12.57.00-PM.png)](http://blog.teamtreehouse.com/wp-content/uploads/2012/09/Screen-Shot-2012-09-25-at-12.57.00-PM.png)  
+ - type in the following command:  
+ ```bash
+ python --version
+ ```    
+ If the result look like, you are alright:  
+ ```bash
+ Python 3.5.2
+ ```  
+ If not, contact me.  
+  
+2. install pip, requests, csv, os and geopy  
  - install pip  
-  - use *easy_install* for the installation. Type in these command in terminal, line by line, while waiting for each of them to finish before you proceed. You will know when the command has finished when you are back to line of the Terminal screen that looks like that:  
+  - use *easy_install* for the installation. Type in these command in terminal, line by line by pressing *Enter* after each line, while waiting for each of them to finish before you proceed. You will know when the command has finished when you are back to line of the Terminal screen that looks like that:  
   ```bash
   your-user-name: $ 
   ```  
@@ -40,6 +51,19 @@ Python is a programming language and we will use it in order to get coordinates 
   curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
   sudo easy_install pip
   pip --version
+  ```  
+    
+  When finished, pip should tell you its version, something like:
+  ```bash
+  pip 9.0.1 from /home/user/.virtualenvs/securaxis/lib/python3.5/site-packages (python 3.5)
+  ```  
+
+  - install requests, oc, csv, geopy. Execute each line separately by typing it in terminal and waiting for its competion:  
+  ```bash
+  pip install requests
+  pip install oc
+  pip install csv
+  pip install geopy
   ```  
 
 ### Other  
