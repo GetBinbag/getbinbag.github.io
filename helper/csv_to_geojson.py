@@ -2,30 +2,20 @@ import csv, os
 import requests
 from geopy.geocoders import Nominatim
 
-# using Google Maps API
-def get_lat_lon(address, locality, city):
-  response = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA')
-  resp_json_payload = response.json()
-  latitude = resp_json_payload['results'][0]['geometry']['location'].get('lat')
-  longitude = resp_json_payload['results'][0]['geometry']['location'].get('lng')
-  return latitude, longitude
-
 # using geopy library
-def get_lat_lon_geopy(address, locality, city):
+def get_lat_lon_geopy(industrial, locality, city, country, i):
   geolocator = Nominatim()
   try:
-    location = geolocator.geocode(address + ", " + locality + ", " + city)
-    print('location 1', location)
+    location = geolocator.geocode(industrial + ", " + locality + ", " + city + ", " + country)
     return location.latitude, location.longitude
   except:
     try:
-      location = geolocator.geocode(locality + ", " + city)
-      print('location 2', location)
+      location = geolocator.geocode(locality + ", " + city + ", " + country)
       return location.latitude, location.longitude
     except:
       try:
-        location = geolocator.geocode(city)
-        print('location 3', location)
+        location = geolocator.geocode(city + ", " + country)
+        print('line %s WARNING: Could not recognize address, falling back to city, which is too generic' % i)
         return location.latitude, location.longitude
       except:
         return 0,0
@@ -86,7 +76,7 @@ for row in rawData:
         state = row[8]
         country = row[9]
         # latitude, longitude = get_lat_lon(locality, city)
-        latitude, longitude = get_lat_lon_geopy(industrial_area, locality, city)
+        latitude, longitude = get_lat_lon_geopy(industrial_area, locality, city, country, iter)
         output += template % (longitude, latitude, company, waste_type, plot, stage, industrial_area, locality, city, state, country)
 
 # replace the comma after the last '},'
