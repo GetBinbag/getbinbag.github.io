@@ -32,7 +32,7 @@
 }
 
 .form-control {
-	width: 26.9%;
+	width: 40%;
 	font-size: 24px;
 	line-height: 1.8;
 	height: 70px;
@@ -51,7 +51,7 @@ input {
 }
 
 .search-button {
-	width: 18%;
+	width: 19%;
 	white-space: nowrap;
 	color: #fff;
 	background-color: #00853e;
