@@ -26,8 +26,8 @@ The website has two pages:
 1. The main page  
  - the main page contains a brief of the project along with contact details and search form  
  - the search form has two fields  
-  * city  
-  * type  
+   * city  
+   * type  
  - if any of these fields is complete, the map returns results given the specific filtering criteria  
  - if both these fields are left empty, the map shows all waste facilities, which are currently in the database  
 
@@ -35,7 +35,7 @@ The website has two pages:
  - it shows a list of name + city for all waste facilities  
  - it shows each waste facility as a pin on the map  
  - both the names in the list to the left, and the pin on the map to the right are clickable  
-  * when clicked, they send the viewer to the pin on this particuclar waste facility and show a bubble with its full address  
+   * when clicked, they send the viewer to the pin on this particuclar waste facility and show a bubble with its full address  
   
 ---  
 
